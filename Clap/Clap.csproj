@@ -54,6 +54,7 @@
     <Compile Include="SongFormat.cs" />
     <Compile Include="UI\SongViewer.cs" />
     <Compile Include="UI\ProgressBar.cs" />
+    <Compile Include="PlayMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

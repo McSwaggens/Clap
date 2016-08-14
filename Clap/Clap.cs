@@ -22,6 +22,8 @@ namespace Clap
 		
 		public SongViewer songViewer;
 		
+		public PlayMode playMode = PlayMode.NONE;
+		
 		public ProgressBar songProgressBar;
 		
 		/*
