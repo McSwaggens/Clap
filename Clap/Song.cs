@@ -12,6 +12,7 @@ namespace Clap
 		public Song (string filePath)
 		{
 			this.filePath = filePath;
+			name = Path.GetFileNameWithoutExtension (filePath);
 			format = GetFileFormat();
 		}
 		
