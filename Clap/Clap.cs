@@ -22,9 +22,13 @@ namespace Clap
 		
 		public SongViewer songViewer;
 		
+		public StatusBar statusBar;
+		
 		public PlayMode playMode = PlayMode.NONE;
 		
 		public ProgressBar songProgressBar;
+		
+		public Song currentSong = null;
 		
 		/*
 		* Song name at top 
@@ -80,8 +84,14 @@ namespace Clap
 			songProgressBar.progress = 50;
 			AddComponent (songProgressBar);
 			
+			statusBar = new StatusBar (this);
+			statusBar.Format (new Location (0, 0), new Size (GUI.ScreenWidth, 1));
+			AddComponent (statusBar);
+			
 			//Create a new thread to check if the terminal has been resized
 			GUI.StartGUIEventListener();
+			
+			songViewer.Focus ();
 			
 			//Draw everything to the screen for the first time
 			Refresh ();
@@ -126,6 +136,11 @@ namespace Clap
 			Environment.Exit(0);
 		}
 		
+		public void PlaySong (Song song)
+		{
+			currentSong = song;
+			Refresh ();
+		}
 
 		public void Refresh()
 		{
