@@ -8,6 +8,14 @@ namespace Clap
 		
 		int highLighted;
 		
+		Song highLightedSong
+		{
+			get
+			{
+				return clap.songs[highLighted];
+			}
+		}
+		
 		public SongViewer (Clap clap) : base (clap)
 		{
 			this.clap = clap;
@@ -49,6 +57,11 @@ namespace Clap
 					highLighted++;
 					SelfUpdate ();
 				}
+			}
+			else
+			if (keyInfo.Key == ConsoleKey.Enter)
+			{
+				clap.PlaySong (highLightedSong);
 			}
         }
     }
